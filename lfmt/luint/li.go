@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func main() {
@@ -20,7 +19,5 @@ func li() {
 
 	fmt.Println(a - b)
 	fmt.Println(c - d)
-
-	fmt.Println(math.Pow(2, 64))
 
 }
