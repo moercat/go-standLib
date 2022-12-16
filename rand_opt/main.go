@@ -15,7 +15,7 @@ func main() {
 	var r opt.RNG
 
 	for i := 0; i < 10000000; i++ {
-		//opt.Old()
+		//opt.MathRand()
 		opt.Rng(r)
 		//fmt.Println(i)
 	}
