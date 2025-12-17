@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go-standLib/quicksort"
+	"go-standLib/utils"
 )
 
 func main() {
@@ -11,7 +11,7 @@ func main() {
 	fmt.Println("Original array:", arr)
 
 	// 执行快速排序
-	quicksort.QuickSort(arr)
+	utils.QuickSort(arr)
 
 	fmt.Println("Sorted array:  ", arr)
 
@@ -19,7 +19,7 @@ func main() {
 	arr2 := []int{3, 6, 8, 10, 1, 2, 1}
 	fmt.Println("\nOriginal array:", arr2)
 
-	quicksort.QuickSort(arr2)
+	utils.QuickSort(arr2)
 
 	fmt.Println("Sorted array:  ", arr2)
 }

@@ -1,62 +1,134 @@
-# Go 标准库学习项目
+# Go StandLib
 
-这是一个用于学习和实践 Go 语言标准库及常见用法的集合项目。
+Go StandLib 是一个 Go 语言标准库学习与实践项目，旨在深入理解和掌握 Go 语言的各种特性和最佳实践。
 
-## 项目说明
+## 目录
 
-本项目包含各种 Go 语言编程实践案例，涵盖如下主题：
+- [项目简介](#项目简介)
+- [目录结构](#目录结构)
+- [安装](#安装)
+- [使用方法](#使用方法)
+- [模块说明](#模块说明)
+- [测试](#测试)
+- [贡献](#贡献)
+- [许可证](#许可证)
 
-- 数据结构实现
-- 并发编程模式
-- 排序算法
-- 字符串处理
-- 测试用例
-- 第三方库使用示例
+## 项目简介
 
-## 包含的模块
+本项目是一个专注于 Go 标准库学习的实践集合，通过实现常见的数据结构、算法、并发模式等，帮助开发者更好地理解 Go 语言的核心概念和最佳实践。项目以模块化的方式组织，每个模块都专注特定领域，便于学习和参考。
 
-- `atm`: 原子操作示例
-- `bloomFilter`: 布隆过滤器实现
-- `channel`: Go 通道使用示例
-- `do_test`: 基准测试示例
-- `draw`: 图形绘制示例
-- `fun`: 函数特性演示
-- `game`: 游戏相关代码
-- `lfmt`: 日志格式化工具
-- `list`: 双向链表示例
-- `map_hash`: 哈希表相关示例
-- `plan`: 规划相关代码
-- `plugin`: 插件系统示例
-- `quicksort`: 排序算法集合
-- `rand_opt`: 随机数性能优化示例
-- `ring`: 一致性哈希
-- `slice`: 切片操作示例
-- `sort_demo`: 排序演示
-- `str`: 字符串处理操作
-- `sync`: 同步原语示例
+## 目录结构
 
-## 依赖库
+```
+go-standLib/
+├── main.go           # 主程序入口，演示排序功能
+├── go.mod            # Go 模块定义
+├── go.sum            # Go 模块校验和
+├── collections/      # 数据结构模块
+│   ├── ap.go         # 链表相关实现
+│   ├── ck.go         # 一致性哈希相关
+│   ├── consistent_str.go
+│   ├── fast_search.go # 快速搜索算法
+│   ├── faststr.go    # 字符串优化操作
+│   ├── join_str.go   # 字符串连接优化
+│   ├── list.go       # 链表数据结构
+│   ├── range.go      # 范围类型
+│   ├── swiss_map.go  # Swiss Map 实现(高性能 map)
+│   ├── two_map.go    # Two Map 实现
+│   ├── window.go     # 滑动窗口
+│   ├── *.go          # 其他数据结构实现
+│   └── *_test.go     # 单元测试
+├── concurrent/       # 并发编程模块
+│   └── channel_example.go # 通道使用示例
+├── utils/            # 工具函数模块
+│   ├── quicksort.go  # 快速排序实现
+│   ├── mergesort.go  # 归并排序实现
+│   ├── heapsort.go   # 堆排序实现
+│   ├── string_split.go # 字符串分割优化
+│   ├── time.go       # 时间相关工具
+│   └── *_test.go     # 单元测试
+└── README.md         # 项目说明文档
+```
 
-本项目使用以下第三方库：
+## 安装
 
-- github.com/aceld/zinx: 网络服务器框架
-- github.com/bits-and-blooms/bitset: 位集操作
-- github.com/golang/protobuf: Protocol Buffers 支持
-- github.com/mroth/weightedrand: 加权随机选择
-- github.com/spf13/cast: 类型转换工具
-- gonum.org/v1/plot: 数据可视化绘图库
+```bash
+# 克隆项目
+git clone https://github.com/username/go-standLib.git
+cd go-standLib
+
+# 下载依赖
+go mod tidy
+```
 
 ## 使用方法
 
+运行主程序（演示排序功能）：
 ```bash
 go run main.go
 ```
 
-或进入具体模块运行：
+单独运行某个模块的测试：
 ```bash
-cd quicksort
-go test -v
+# 运行 utils 包中的排序算法测试
+go test ./utils/quicksort_test.go ./utils/quicksort.go ./utils/mergesort.go
+
+# 运行 collections 包的测试
+go test ./collections/...
 ```
+
+## 模块说明
+
+### collections 模块
+
+该模块包含各种数据结构的实现和优化：
+
+- `list.go` - 链表数据结构实现
+- `swiss_map.go` - 高性能的 Swiss Map 实现（基于 Swiss Tables）
+- `faststr.go` - 字符串操作优化
+- `fast_search.go` - 快速搜索算法
+- `window.go` - 滑动窗口数据结构
+- `consistent_str.go` - 一致性哈希算法
+- `range.go` - 范围类型的实现
+
+### concurrent 模块
+
+该模块展示了 Go 的并发编程实践：
+
+- `channel_example.go` - 通道使用示例
+
+### utils 模块
+
+该模块包含常用的工具函数和算法：
+
+- `quicksort.go` - 快速排序算法实现
+- `mergesort.go` - 归并排序算法实现
+- `heapsort.go` - 堆排序算法实现
+- `string_split.go` - 高效字符串分割算法
+- `time.go` - 时间处理相关工具函数
+
+## 测试
+
+运行所有测试：
+```bash
+go test ./...
+```
+
+运行特定模块的测试：
+```bash
+go test ./utils/...  # 运行 utils 模块的所有测试
+go test ./collections/...  # 运行 collections 模块的所有测试
+go test ./concurrent/...  # 运行 concurrent 模块的所有测试
+```
+
+## 贡献
+
+欢迎提交 Issue 和 Pull Request 来改进此项目。请确保遵循以下指导原则：
+
+1. 在提交代码前，请运行测试确保所有功能正常工作
+2. 添加适当的单元测试以验证新功能
+3. 保持代码风格一致，遵循 Go 语言的最佳实践
+4. 更新相关文档
 
 ## 许可证
 
