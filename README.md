@@ -21,21 +21,24 @@
 ```
 go-standLib/
 ├── collections/     ← 数据结构实验
-│   ├── swiss_map.go    ← SwissTable 风格哈希表
-│   ├── two_map.go      ← 双 map 结构
-│   ├── faststr.go      ← 字符串操作优化
-│   ├── join_str.go     ← 字符串拼接对比
-│   ├── window.go       ← 滑动窗口
-│   ├── range.go        ← 范围类型
-│   └── list.go         ← 链表
 ├── concurrent/      ← 并发编程
-│   └── channel_example.go
 ├── utils/           ← 工具函数
-│   ├── quicksort.go / mergesort.go / heapsort.go
-│   ├── string_split.go
-│   └── time.go
+├── notes/           ← Go 1.21+ 标准库阅读笔记
+│   ├── 01-slices-sort.md   ← slices / maps / sort 包
+│   ├── 02-cmp-package.md   ← cmp 包 + 内建 min/max
+│   └── 03-log-slog.md      ← log/slog 结构化日志
 └── main.go
 ```
+
+### 阅读笔记
+
+| # | 主题 | 状态 |
+| --- | --- | --- |
+| 01 | slices / maps / sort 包 | ✅ |
+| 02 | cmp 包 + 内建 min/max | ✅ |
+| 03 | log/slog 结构化日志 | ✅ |
+| 04 | （计划）testing/slogtest | ❌ |
+| 05 | （计划）context.AfterFunc | ❌ |
 
 ## 技术栈
 
