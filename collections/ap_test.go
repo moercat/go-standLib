@@ -46,3 +46,13 @@ func TestName(t *testing.T) {
 
 	fmt.Println(cap(b), cap(c))
 }
+
+func Test1111(t *testing.T) {
+	a := []string{}
+	b := []string{}
+	c := []string{"1", "2", "3"}
+	for _, s := range c {
+		a = append(b, s)
+	}
+	fmt.Println(a, b, c)
+}
