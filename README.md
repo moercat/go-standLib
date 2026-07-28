@@ -1,56 +1,47 @@
 # Go StandLib
 
-> Go 标准库源码学习与本地实验笔记
+> 🎯 **Go 1.21+ 标准库源码阅读笔记** — 边看边写，边学边实验
 
-![Go Version](https://img.shields.io/badge/Go-1.23-blue)
-![Status](https://img.shields.io/badge/Status-学习笔记-blue)
-![CI](https://img.shields.io/badge/CI-无-lightgrey)
+> 个人学习 Go 标准库源码的笔记和实验代码。每个笔记对应一个标准库包（含源码摘录 + 自己简化重写 + 思考）。
 
-## 定位
+![Go Version](https://img.shields.io/badge/Go-1.21-blue)
+![Notes](https://img.shields.io/badge/笔记-3-blue)
+![Status](https://img.shields.io/badge/Status-持续追加-blue)
 
-**解决了什么问题**：个人在阅读 Go 标准库源码和动手实验过程中的笔记。
+## ✨ 为什么是这个仓库
 
-**与 [go-algorithms-collection](https://github.com/moercat/go-algorithms-collection) 的区别**：
-- `go-standLib` — 源码级实验：SwissTable 实现、range 迭代器、滑动窗口、字符串优化对比
-- `go-algorithms-collection` — 刷题笔记：LeetCode 题解 + 常用算法模板
+- 📖 **笔记 + 实验** — 不是"读完就忘"，是看源码后自己写一遍
+- 🎯 **聚焦 1.21+ 新包** — slices / maps / cmp / log/slog ...
+- 🔬 **本地实验** — collections/concurrent/utils/ 三个实验目录
 
-**目标用户**：自己（学习参考用）。
+## 📚 已完成的笔记
 
-## 内容
+| # | 主题 | 笔记 |
+| --- | --- | --- |
+| 01 | slices / maps / sort 包 | [notes/01-slices-sort.md](./notes/01-slices-sort.md) |
+| 02 | cmp 包 + 内建 min/max | [notes/02-cmp-package.md](./notes/02-cmp-package.md) |
+| 03 | log/slog 结构化日志 | [notes/03-log-slog.md](./notes/03-log-slog.md) |
+
+每篇笔记结构：源码摘录 → 自己简化重写 → 我的理解。
+
+## 🗂️ 实验代码
 
 ```
 go-standLib/
-├── collections/     ← 数据结构实验
-├── concurrent/      ← 并发编程
-├── utils/           ← 工具函数
-├── notes/           ← Go 1.21+ 标准库阅读笔记
-│   ├── 01-slices-sort.md   ← slices / maps / sort 包
-│   ├── 02-cmp-package.md   ← cmp 包 + 内建 min/max
-│   └── 03-log-slog.md      ← log/slog 结构化日志
+├── notes/           ← 3 篇 1.21+ 新包阅读笔记
+├── collections/     ← 数据结构实验（SwissTable / 双 map / 字符串优化）
+├── concurrent/      ← 并发编程（channel / goroutine）
+├── utils/           ← 工具函数（排序算法 / 字符串 / 时间）
 └── main.go
 ```
 
-### 阅读笔记
+## 与 go-algorithms-collection 的区别
 
-| # | 主题 | 状态 |
-| --- | --- | --- |
-| 01 | slices / maps / sort 包 | ✅ |
-| 02 | cmp 包 + 内建 min/max | ✅ |
-| 03 | log/slog 结构化日志 | ✅ |
-| 04 | （计划）testing/slogtest | ❌ |
-| 05 | （计划）context.AfterFunc | ❌ |
+- `go-standLib` — **源码级实验**（读标准库 + 自己重写）
+- `go-algorithms-collection` — **刷题笔记**（LeetCode 题解 + 算法模板）
 
-## 技术栈
+## 后续笔记计划
 
-| 组件 | 选型 |
-|------|------|
-| 语言 | Go 1.23 |
-| 依赖 | 无外部依赖（仅标准库实验） |
-
-## 状态
-
-| 维度 | 说明 |
-|------|------|
-| 当前阶段 | 个人学习笔记（持续追加） |
-| 最后更新 | 2025-12-17 |
-| 活跃度 | 📝 学习笔记（不定期更新） |
+- [ ] testing/slogtest
+- [ ] context.AfterFunc
+- [ ] unique.Handle
